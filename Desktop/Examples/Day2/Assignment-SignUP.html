@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function submit(){
+			// document.getElementById('uname-value').value=document.getElementById('uname').value;
+			document.getElementById('uname-value').innerHTML=document.getElementById('uname').value;
+			document.getElementById('dept-value').innerHTML=document.getElementById('dept').value;
+			document.getElementById('eid-value').innerHTML=document.getElementById('eid').value;
+			console.log(document.getElementById('uname').value);
+
+		}
+	</script>
+</head>
+<body>
+	Enter Name:<input type="text" id="uname"><br>
+	Enter Department:<input type="text" id="dept"><br>
+	Enter Employee ID:<input type="number" id="eid"><br>
+	<input type="button" value="submit" onclick="submit()">
+	<table border="5px">
+		<tr>
+		<th>uname</th>
+		<th>dept</th>
+		<th>eid</th>
+		</tr>
+		<tr>
+		<td id="uname-value">h</td>
+		<td id="dept-value"></td>
+		<td id="eid-value"></td>
+		</tr>
+  
+	</table>
+</body>
+</html>
