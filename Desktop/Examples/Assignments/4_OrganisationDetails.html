@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title></title>
+	<script type="text/javascript">
+		function submit(){
+			// document.getElementById('uname-value').value=document.getElementById('uname').value;
+			document.getElementById('oname-value').innerHTML=document.getElementById('oname').value;
+			document.getElementById('oloc-value').innerHTML=document.getElementById('oloc').value;
+			document.getElementById('oturn-value').innerHTML=document.getElementById('oturn').value;
+			
+
+		}
+	</script>
+</head>
+<body>
+	<label>Enter Organisation Name</label>
+	<input type="text" id="oname" ><br>
+	<label>Enter location</label>
+	<input type="text" id="oloc" ><br>
+	<label>Enter Organisation turnover:</label>
+	<input type="text" id="oturn" ><br>
+	<input type="button" value="submit" onclick="submit()">
+	<table border="3px">
+		<tr>
+		<th>Organisation name</th>
+		<th>Organisation location</th>
+		<th>Organisation turnover</th>
+		</tr>
+		<tr>
+		<td id="oname-value"></td>
+		<td id="oloc-value"></td>
+		<td id="oturn-value"></td>
+		</tr>
+  
+	</table>
+</body>
+</html>

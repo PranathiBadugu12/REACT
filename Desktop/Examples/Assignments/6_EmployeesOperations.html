@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript">
+		var records=[];
+		var arrHead=["id","name","salary","joinDate"]
+		function compare(a, b) {
+		// Use toUpperCase() to ignore character casing
+			const bandA = a.name.toUpperCase();
+			const bandB = b.name.toUpperCase();
+
+			let comparison = 0;
+			if (bandA > bandB) {
+			comparison = 1;
+			} else if (bandA < bandB) {
+			comparison = -1;
+			}
+			return comparison;
+		}
+
+		function Employee(empId,name,salary,jdate){
+			this.empId=empId;
+			this.name=name;
+			this.salary=salary;
+			this.jdate=jdate;
+
+			this.showEmployeeDetails=function(){
+				 return this.empId+" "+this.name+" "+this.salary+" "+this.jdate
+			}
+		}
+		function pushele(){
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var val1=document.getElementById('txt1').value
+			var val2=document.getElementById('txt2').value
+			var val3=document.getElementById('txt3').value
+			var val4=document.getElementById('txt4').value
+
+			var emp=new Employee(val1,val2,val3,val4)
+			records.push(emp)
+			alert("Records saved")
+		}
+		
+		function search(){
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var f=0;
+			if(records.length == 0)
+			{
+				alert("No records to display")
+				return;
+			}
+			var id = prompt("Enter id to be searched")
+			for(var i=0;i<records.length;i++){
+					var arr=records[i].showEmployeeDetails().split(' ')
+					console.log(arr[0] +"..."+id)
+					if(arr[0]===id){
+						console.log(arr[0] +"..."+id)
+						alert(records[i].showEmployeeDetails())
+						f=1;
+						break;
+					}
+			}
+			if(f == 0){
+				alert("Element with id not found");
+				return;
+			}
+		}
+		function modifyDetails(){
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var f=0;
+			var indices = [];
+			if(records.length == 0)
+			{
+				alert("No records to display")
+				return;
+			}
+			for(var i=0;i<records.length;i++){
+					var arr=records[i].showEmployeeDetails().split(' ')
+					if(arr[1].charAt(0)==='A' || arr[1].charAt(0)==='a'){
+						indices.push(i);
+					}
+			}
+			for(var i=0;i<indices.length;i++){
+						var arr=records[indices[i]].showEmployeeDetails().split(' ')
+						arr[2] = parseInt(arr[2])+100
+						records.splice(indices[i],1);
+						var emp = new Employee(arr[0],arr[1],arr[2],arr[3])
+						records.push(emp);
+						console.log(records);
+						f=1;
+			}
+			if(f == 0){
+				alert("Element with id not found");
+				return;
+			}
+		}
+		function HighSal(){
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var str=" ";
+			var total =0;
+			if(records.length == 0)
+			{
+				alert("No records to display")
+				return;
+			}
+			for(var i=0;i<records.length;i++){
+				var arr = records[i].showEmployeeDetails().split(' ');
+				total += parseInt(arr[2]);
+			}
+			total /= records.length;
+			for(var i=0;i<records.length;i++){
+				var arr = records[i].showEmployeeDetails().split(' ');
+				if(parseInt(arr[2]) > total)
+					str = str+arr[0]+" "+arr[1]+" "+arr[2]+" "+arr[3]+"\n";
+			}
+			alert("The employees having salary greater than avg sal\n"+str)
+		}
+
+		function displayRecords(){
+			if(records.length == 0)
+			{
+				alert("No records to display")
+				return;
+			}
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var row = table.insertRow(-1);
+			for(var i=0;i<4;i++){
+				var cell = row.insertCell(-1);
+	                cell.innerHTML = arrHead[i];
+			}
+			records.sort(compare);
+			for (var i = 0; i < records.length; i++) {
+	            row = table.insertRow(-1);
+	            var str = records[i].showEmployeeDetails();
+	            var arr = str.split(' '); 
+	            console.log(str)
+	            for (var j = 0; j < arr.length; j++) {
+	                var cell = row.insertCell(-1);
+	                cell.innerHTML = arr[j];
+	            }
+        	}
+		}
+		function jdate(){
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var key = prompt("Enter month");
+			var str="";
+			for(var i=0;i<records.length;i++){
+				console.log(new Date(records[i].jdate).getMonth())
+				if(new Date(records[i].jdate).getMonth()+1 == parseInt(key))
+					str+=records[i].showEmployeeDetails()+"\n";
+			}
+			alert(str);
+		}
+		function pop(){
+			var table = document.getElementById('empTable')
+			table.innerHTML=""
+			var f=0;
+			if(records.length == 0)
+			{
+				alert("No records to display")
+				return;
+			}
+			var id = prompt("Enter id to be deleted")
+			for(var i=0;i<records.length;i++){
+					var arr=records[i].showEmployeeDetails().split(' ')
+					console.log(arr[0] +"..."+id)
+					if(arr[0]===id){
+						console.log(arr[0] +"..."+id)
+						records.splice(i,1);
+						f=1;
+						break;
+					}
+			}
+			if(f == 0){
+				alert("Element with id not found");
+				return;
+			}
+
+		}
+
+
+	</script>
+</head>
+<body>
+
+<label>Enter empId </label><input type="text" name="" id="txt1"> <br>
+<label>Enter name</label> <input type="text" name="" id="txt2"> <br>
+<label>Enter salary</label> <input type="text" name="" id="txt3"> <br>
+<label>Enter joining date</label> <input type="date" name="" id="txt4"> <br>
+
+<input type="button" name="" onclick="pushele()" value="SaveRecord"> 
+<input type="button" name="" onclick="displayRecords()" value="DisplayRecords"> 
+<table id="empTable" border="1px">
+	
+</table>
+<input type="button" name="" onclick="pop()" value="DeleteRecord"> 
+<input type="button" name="" onclick="search()" value="SearchRecord"><br>
+<input type="button" name="" onclick="modifyDetails()" value="modifyDetails"> 
+<input type="button" name="" onclick="HighSal()" value="Emp sal > avg sal"> <br>
+<input type="button" name="" onclick="jdate()" value="Employee details based on joining date"> <br>
+
+<div id="cont"></div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

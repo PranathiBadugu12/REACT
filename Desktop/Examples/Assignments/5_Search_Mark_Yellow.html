@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+<style type="text/css">
+	.highlight {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to search a string for a string in the paragraph</p>
+
+
+<button onclick="highlight()">Try it</button>
+<input type="text" id="text">
+<p id="inputText">Dussehra is one of the most well-known and highly celebrated holidays in India. Even though it is a Hindu festival but in a secular country like India, people from various religions enjoy themselves in a united way. On Dussehra, the streets are decorated with bright lights, and songs are played from loudspeakers that come from all directions and mix to create beautiful chaos along with the voices and cheers of the people who crowd the street to have a good time. Delicious roadside street foods and small souvenirs are sold by vendors during the ten days of Navratri.</p>
+
+<script>
+function highlight() {
+	var text=document.getElementById("text").value;
+  var inputText = document.getElementById("inputText");
+  var innerHTML = inputText.innerHTML;
+  var index = innerHTML.indexOf(text);
+  console.log(index);
+  if (index >= 0) { 
+   innerHTML = innerHTML.substring(0,index) + "<span class='highlight'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
+   inputText.innerHTML = innerHTML;
+  }
+}
+</script>
+
+</body>
+</html>

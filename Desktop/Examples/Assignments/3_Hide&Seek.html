@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#dot{
+  position: absolute;
+}
+	</style>
+	<script type="text/javascript">
+		function update(){
+			console.log(window.innerHeight+" "+window.innerWidth)
+			document.getElementById('dot').style.left = Math.floor(Math.random() * window.innerWidth)+"px"; 
+			document.getElementById('dot').style.top = Math.floor(Math.random() * window.innerHeight)+"px"; 
+			// document.getElementById('dot').style.left = "100px"; 
+		}
+	</script>
+</head>
+<body>
+<img onmouseover="update()" id="dot" src="smiley.gif"></img>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function multiply(){
+			document.getElementById('res').innerHTML="The multiplication of two numbers is " + ((document.getElementById('n1').value) * (document.getElementById('n2').value))
+		}
+		function add(){
+			document.getElementById('res').innerHTML="The addition of two numbers is "+(parseInt(document.getElementById('n1').value) +parseInt(document.getElementById('n2').value))
+		}
+	</script>
+	
+</head>
+<body>
+<label>Enter number 1</label><input type="number" id="n1"><br><br>
+<label>Enter number 2</label><input type="number" id="n2"><br><br><br>
+<input style="width:100px;height:100px;" type="button" value="+" onclick="add()">
+<input style="width:100px;height:100px;" type="button" value="X" onclick="multiply()">
+<br>
+<p id ="res"></p>
+</body>
+</html>
