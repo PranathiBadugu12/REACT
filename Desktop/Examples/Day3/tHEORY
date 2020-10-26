@@ -1,0 +1,137 @@
+ECMAScript 2015 is the newest version of the ECMAScript standard. This standard was ratified in June 2015. ES2015 is a significant update to the language, and the first major update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is underway now.
+
+
+ECMA [European Computer Manufacturers Association]   
+1995: JavaScript is born as LiveScript
+1997: ECMAScript standard is established
+1999: ES3 comes out and IE5 is all the rage
+2000–2005: XMLHttpRequest, a.k.a. AJAX, gains popularity in app such as Outlook Web Access (2000) and Oddpost (2002), Gmail (2004) and Google Maps (2005).
+2009: ES5 comes out (this is what most of us use now) with forEach, Object.keys, Object.create (specially for Douglas Crockford), and standard JSON
+2015: ES6/ECMAScript2015 comes out; it has mostly syntactic sugar, because people weren’t able to agree on anything more ground breaking (ES7?)
+
+
+
+Here’s the list of the top 10 best ES6 features for a busy software engineer (in no particular order):
+Default Parameters in ES6
+Template Literals in ES6
+Multi-line Strings in ES6
+Destructuring Assignment in ES6
+Enhanced Object Literals in ES6
+Arrow Functions in ES6
+Promises in ES6
+Block-Scoped Constructs Let and Const
+Classes in ES6
+Modules in ES6
+
+
+
+Arrows are a function shorthand using the => syntax. They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript. They support both expression and statement bodies. Unlike functions, arrows share the same lexical this as their surrounding code.
+
+
+
+exports is an alias to module.exports.
+node automatically creates it as a convenient shortcut.
+For assigning named properties, use either one
+
+
+
+PATTERN 1: DEFINE A GLOBAL
+    
+// foo.js
+    foo = function () {
+      console.log('foo!');
+    }
+
+    // app.js
+    require('./foo.js');
+    foo();
+
+
+    PATTERN 2: EXPORT AN ANONYMOUS FUNCTION
+    
+    
+  // bar.js
+    module.exports = function () {
+      console.log('bar!');
+    }
+ 
+// app.js
+    var bar = require('./bar.js');
+    bar();
+
+
+    PATTERN 3: EXPORT A NAMED FUNCTION
+    
+    
+    // first.js
+    exports.fiz = function () {
+      console.log('fiz!');
+    }
+ 
+// app.js
+    var FOO = require('./first.js').fiz;
+    FOO();
+
+
+
+PATTERN 4: EXPORT AN ANONYMOUS OBJECT
+    
+      // buz.js
+    var Buz = function () {};
+    Buz.prototype.log = function () {
+      console.log('buz!');
+    };
+    module.exports = new Buz();
+
+  // app.js
+    var buz = require('./buz.js');
+    buz.log();
+
+
+PATTERN 5: EXPORT A NAMED OBJECT
+    
+    
+ // baz.js
+    var Baz = function () {};
+    Baz.prototype.log = function () {
+      console.log('baz!');
+    };
+
+    exports.Baz = new Baz();
+
+    // app.js
+    var baz = require('./baz.js').Baz;
+    baz.log();
+
+
+
+PATTERN 6: EXPORT AN ANONYMOUS PROTOTYPE
+    
+    
+ // doo.js
+    var Doo = function () {};
+    Doo.prototype.log = function () {
+        console.log('doo!');
+    }
+    module.exports = Doo;
+
+// app.js
+    var Doo = require('./doo.js');
+    var doo = new Doo();
+    doo.log();
+
+
+PATTERN 7: EXPORT A NAMED PROTOTYPE
+        // qux.js
+    var Qux = function () {};
+    Qux.prototype.log = function () {
+      console.log('baz!');
+    };
+    exports.Qux = Qux;
+
+
+    // app.js
+    var Qux = require('./qux.js').Qux;
+    var qux = new Qux();
+    qux.log();
+

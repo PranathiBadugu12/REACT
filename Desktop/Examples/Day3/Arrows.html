@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// var multipleES5 = function(x,y){
+		// 	return x * y;
+		// }
+		// const multipleES6=(x,y) => {return x*y}
+		// var col = [1,2,3,4,5]
+		// var arr = () => col[0]
+		// function foo(n){
+		// 	var f = () => col[0]+n;
+		// 	return f()
+		// }
+		// var sum = col.reduce((a,b) => a+b)
+		// var even = col.filter(v => v%2 == 0)
+		// alert("multipleES6(10,20)"+multipleES6(10,20))
+		// alert("multipleES5(10,20)"+multipleES5(10,20))
+		// alert("arr()"+arr())
+		// alert("foo(3)"+foo(3))
+		// alert("sum"+sum)
+		// alert("even"+even)
+
+		var people = [{name:'A',age:11},{name:'B',age:2},{name:'C',age:3}]
+		//alert(people[0].name)
+		function teenager(person){
+			return (person.age > 10 && person.age < 19)
+		}
+		var firstTeenager = people.find(teenager)
+		alert(firstTeenager.name)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

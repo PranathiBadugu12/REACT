@@ -1,0 +1,5 @@
+var msg = require('./foo.js')
+// console.log(msg)
+// console.log(msg.hello())
+// hola()
+msg()
