@@ -62,17 +62,17 @@ Props are passed to components via HTML attributes.
 ________________________________________________________________
 |      State	                 |                     Props    |
 +---------------------------------------------------------------+
-|			Mutable				 |			Immutable			|
+|Mutable			 |		Immutable       |
 +---------------------------------------------------------------+
 |State holds information about   |Props allow you to pass data  |
-| the components.				 |from one component to other   |
-|								 | components as an argument.   |
+| the components.		 |from one component to other   |
+|				 | components as an argument.   |
 +---------------------------------------------------------------+
 |Stateless components cannot     |Stateless components can have |
 |have state                      | props                        |
 +---------------------------------------------------------------+
 |States can be used for rendering| Props are used to communicate|
-|dynamic changes with 			 | between components           |
+|dynamic changes with 	         | between components           |
 |the component.                  |                              |                              
 +---------------------------------------------------------------+
 
