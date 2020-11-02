@@ -1,10 +1,17 @@
 1	What is React?
-ReactJS is JavaScript library used for building reusable UI components. Mostly React is used as the V in MVC. React abstracts away the DOM from you, offering a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using React Native. React implements one-way reactive data flow, which reduces the boilerplate and is easier to reason about than traditional data binding.
+ReactJS is JavaScript library used for building reusable UI components. 
+Mostly React is used as the V in MVC. React abstracts away the DOM from you, offering a simpler 
+programming model and better performance. React can also render on the server using Node, 
+and it can power native apps using React Native. React implements one-way reactive data flow, 
+which reduces the boilerplate and is easier to reason about than traditional data binding.
 
 2	What are the major features of React?
-a.	JSX − JSX is JavaScript syntax extension. It isn't necessary to use JSX in React development, but it is recommended.
-b.	Components − React is all about components. You need to think of everything as a component. This will help you maintain the code when working on larger scale projects.
-c.	Unidirectional data flow and Flux − React implements one-way data flow which makes it easy to reason about your app. Flux is a pattern that helps keeping your data unidirectional.
+a.	JSX − JSX is JavaScript syntax extension. It isn't necessary to use JSX in React development, 
+but it is recommended.
+b.	Components − React is all about components. You need to think of everything as a component. 
+This will help you maintain the code when working on larger scale projects.
+c.	Unidirectional data flow and Flux − React implements one-way data flow which makes it easy 
+to reason about your app. Flux is a pattern that helps keeping your data unidirectional.
 d.	License − React is licensed under the Facebook Inc. Documentation is licensed under CC BY 4.0.
 
 3	What is JSX?
@@ -52,12 +59,21 @@ When the state object changes, the component re-renders.
 Props are arguments passed into React components.
 Props are passed to components via HTML attributes.
 10	What is the difference between state and props?
-
-State	Props
-Mutable	Immutable
-State holds information about the components.	Props allow you to pass data from one component to other components as an argument.
-	
-Stateless components cannot have state	Stateless components can have props
-States can be used for rendering dynamic changes with the component.	Props are used to communicate between components
+________________________________________________________________
+|      State	                 |                     Props    |
++---------------------------------------------------------------+
+|			Mutable				 |			Immutable			|
++---------------------------------------------------------------+
+|State holds information about   |Props allow you to pass data  |
+| the components.				 |from one component to other   |
+|								 | components as an argument.   |
++---------------------------------------------------------------+
+|Stateless components cannot     |Stateless components can have |
+|have state                      | props                        |
++---------------------------------------------------------------+
+|States can be used for rendering| Props are used to communicate|
+|dynamic changes with 			 | between components           |
+|the component.                  |                              |                              
++---------------------------------------------------------------+
 
 
