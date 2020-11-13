@@ -27,12 +27,10 @@ ________________________________________________________________________________
  DevTools includes an embedded LiveReload server that is used to trigger a browser refresh when a resource is changed.
 ___________________________________________________________________________________________________________________
 7) What does Spring Boot Starter Pom mean? Why Is It Useful?
- Pom adds all the required jars and other things automatically. It also provides a dependency-management section so that you can omit version tags for
- dependencies you are using in pom.We don't need to manually download the jars.
+ Pom adds all the required jars and other things automatically. It also provides a dependency-management section so that you can omit version tags for dependencies you are using in pom.We don't need to manually download the jars.
  ___________________________________________________________________________________________________________________
 8) What does Actuator in Spring Boot mean?
-Actuator endpoints let you monitor and interact with your application. Spring Boot includes a number of built-in endpoints and lets you add your own. 
-For example, the health endpoint provides basic application health information
+Actuator endpoints let you monitor and interact with your application. Spring Boot includes a number of built-in endpoints and lets you add your own. For example, the health endpoint provides basic application health information
 ___________________________________________________________________________________________________________________
 9) What Is the Configuration File Name Used By Spring Boot?
 application.properties or application.yml
@@ -45,14 +43,13 @@ For example
 – Creates a default Spring MVC setup, if Spring MVC is on the classpath.
 ___________________________________________________________________________________________________________________
 11) What are esteem properties of Spring Boot?
-Spring Boot gives different properties, which can be indicated in our project’s application.Properties are utilized to set qualities like a server-port number,
-database association configuration,etc.,
+Spring Boot gives different properties, which can be indicated in our project’s application.Properties are utilized to set qualities like a server-port number, database association configuration,etc.,
 ___________________________________________________________________________________________________________________
 12) What Is the Configuration File Name, which is used By Spring Boot?
 application.properties or application.yml
 ___________________________________________________________________________________________________________________
 13) Would we be able to Use Spring Boot with Applications Which Are Not Using Spring?
-Yes.
+
 ___________________________________________________________________________________________________________________
 14) What Is Name Of The Configuration File, Which You Use In Spring Boot?
 application.properties or application.yml
@@ -61,16 +58,14 @@ ________________________________________________________________________________
 Spring Security is a framework that focuses on providing both authentication and authorization to Java applications.
 ___________________________________________________________________________________________________________________
 16) Would you be able to Control Logging with Spring Boot? How?
-Yes,By default, all logs will print on the console window and not in the files.If you want to print the logs in a file, you need to set the property logging.file 
-or logging.path in the application.properties file.
+Yes,By default, all logs will print on the console window and not in the files.If you want to print the logs in a file, you need to set the property logging.file or logging.path in the application.properties file.
 You can configure logging.path as follows.
 logging.path = /var/tmp/
 You can configure logging.file as follows.
 logging.file = /var/tmp/mylog.log
 ___________________________________________________________________________________________________________________
 17) Differentiate Between An Embedded Container And A War?
-The embedded container is only one component of Spring Boot Traditional WAR additionally benefits a considerable measure from Spring Boot Automatic Spring MVC setup,
-including Dispatcher Servlet Sensible defaults in light of the class-path content
+The embedded container is only one component of Spring Boot Traditional WAR additionally benefits a considerable measure from Spring Boot Automatic Spring MVC setup, including Dispatcher Servlet Sensible defaults in light of the class-path content
 The embedded container can be utilized during improvement.
 ___________________________________________________________________________________________________________________
 18) What does Spring Security mean?
@@ -112,6 +107,5 @@ Tomcat >= 7 or Jetty >= 8
 Spring Framework >= 4.3.10
 ___________________________________________________________________________________________________________________
 25) What is Auto Configuration in Spring boot?
-Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added. 
-For example, If HSQLDB is on your classpath, and you have not manually configured any database connection beans, then it will auto-configure an in-memory database
+Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added. For example, If HSQLDB is on your classpath, and you have not manually configured any database connection beans, then it will auto-configure an in-memory database
 ___________________________________________________________________________________________________________________
